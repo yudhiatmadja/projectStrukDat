@@ -11,7 +11,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // Ganti path berikut dengan path gambar yang ingin Anda analisis
+        
         System.out.println("masukkan path gambar : ");
         String imagePath = scanner.nextLine();
 
@@ -22,10 +22,10 @@ public class App {
                 return;
             }
 
-            // HashMap untuk menyimpan frekuensi setiap warna
+            
             Map<Integer, Integer> colorFrequencyMap = new HashMap<>();
 
-            // Iterasi setiap pixel pada gambar
+           
             for (int x = 0; x < image.getWidth(); x++) {
                 for (int y = 0; y < image.getHeight(); y++) {
                     int pixelColor = image.getRGB(x, y);
@@ -33,7 +33,7 @@ public class App {
                 }
             }
 
-            // Menentukan warna yang paling dominan
+           
             int dominantColor = 0;
             int maxFrequency = 0;
 
@@ -44,7 +44,7 @@ public class App {
                 }
             }
 
-            // Menampilkan hasil
+            
             System.out.println("Warna yang muncul pada gambar:");
             for (Map.Entry<Integer, Integer> entry : colorFrequencyMap.entrySet()) {
                 System.out.printf("Warna: #%06X, Frekuensi: %d\n", entry.getKey() & 0xFFFFFF, entry.getValue());
